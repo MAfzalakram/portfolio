@@ -1,12 +1,37 @@
-# React + Vite
+# 💼 React + Tailwind Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A sleek, single-page developer portfolio built with **React**, **Tailwind CSS**, and **Framer Motion**. This responsive SPA highlights education, experience, projects, and skills with smooth animations and modern design principles.
 
-Currently, two official plugins are available:
+🔗 **Live Demo**: [Visit Portfolio](https://portfolio-beta-sage-gu0ldoi0ho.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- ⚛️ Built with **React** and **Vite**
+- 🎨 Styled using **Tailwind CSS**
+- ✨ **Framer Motion** for scroll and hover animations
+- ⌨️ **Typewriter effect** in Hero section
+- 📦 Modular, reusable component architecture
+- 🌐 Deployed on **Vercel** with **GitHub CI/CD**
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🧩 Sections
+
+- Hero (animated intro with typewriter)
+- About Me
+- Education
+- Experience
+- Projects (with GitHub links)
+- Skills
+- Contact
+- Footer
+
+## 🛠️ Tools & Libraries
+
+- `React`  
+- `Vite`  
+- `Tailwind CSS`  
+- `Framer Motion`  
+- `typewriter-effect`  
+- `React Icons`
+
+## 📂 Project Structure
+

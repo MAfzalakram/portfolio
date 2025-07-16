@@ -1,79 +1,70 @@
-// src/components/Hero.jsx
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Typewriter } from 'react-simple-typewriter';
+import React from "react";
+import { motion } from "framer-motion";
+import Typewriter from "typewriter-effect";
 
 const Hero = () => {
-  const [darkMode, setDarkMode] = useState(true);
-
   return (
     <motion.section
-      id="hero"
-      className={`min-h-screen flex flex-col justify-center items-center transition-all duration-700 text-center px-6 relative overflow-hidden ${
-        darkMode
-          ? 'bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] text-white'
-          : 'bg-gradient-to-br from-pink-100 via-white to-blue-100 text-gray-900'
-      }`}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1.2 }}
+      initial={{ opacity: 0, y: -60 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, ease: "easeOut", type: "spring" }}
+      className="relative min-h-screen flex flex-col justify-center items-center text-center px-4 overflow-hidden"
     >
-      {/* Toggle Button */}
-      <button
-        onClick={() => setDarkMode(!darkMode)}
-        className="absolute top-6 right-6 z-20 px-4 py-2 text-sm rounded-full border border-white bg-black bg-opacity-20 hover:bg-opacity-40 text-white backdrop-blur-md shadow-lg"
-      >
-        Toggle {darkMode ? 'Light' : 'Dark'} Mode
-      </button>
+      {/* Glowing animated background circle */}
+      <motion.div
+        animate={{
+          scale: [1, 1.05, 1],
+          opacity: [0.15, 0.25, 0.15],
+        }}
+        transition={{
+          duration: 6,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        className="absolute w-96 h-96 md:w-[500px] md:h-[500px] rounded-full bg-gradient-to-r from-pink-500 to-indigo-500 blur-3xl opacity-20"
+      />
 
-      {/* Background blur orbs */}
-      <div className="absolute w-72 h-72 bg-purple-700 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse -top-20 -left-20"></div>
-      <div className="absolute w-72 h-72 bg-indigo-600 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse top-32 -right-20"></div>
-
-      <h1 className="text-5xl md:text-6xl font-extrabold mb-4 animate-gradient text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
-        Hi, I'm Muhammad Afzal
+      <h1 className="text-4xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 via-pink-400 to-yellow-400 animate-textGlow">
+        Muhammad Afzal
       </h1>
-      <h2 className="text-2xl md:text-3xl">
-        I'm a <span className="text-purple-300 font-semibold">
-          <Typewriter
-            words={[
-              'Python Backend Developer',
-              'PhD Researcher in AI',
-              'Django & Flask Specialist',
-              'NLP + Deep Learning Enthusiast'
-            ]}
-            loop={true}
-            cursor
-            cursorStyle='|'
-            typeSpeed={70}
-            deleteSpeed={50}
-            delaySpeed={1500}
-          />
-        </span>
-      </h2>
-      <p className="mt-6 max-w-xl text-lg">
-        Passionate about developing AI-driven backend systems and solving real-world problems with research-driven solutions.
-      </p>
-      <div className="mt-10 flex flex-col sm:flex-row gap-4 z-10">
+
+      <div className="text-xl md:text-2xl mt-6 text-cyan-300 font-semibold h-14 drop-shadow-md">
+        <Typewriter
+          options={{
+            strings: [
+              "Backend Developer 💻",
+              "ML Enthusiast 🤖",
+              "React Explorer ⚛️",
+              "Computer Science Researcher 📚",
+            ],
+            autoStart: true,
+            loop: true,
+            delay: 55,
+            deleteSpeed: 30,
+            pauseFor: 1200,
+          }}
+        />
+      </div>
+
+      <motion.div
+        className="flex space-x-4 mt-8"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1, duration: 0.8 }}
+      >
         <a
           href="#contact"
-          className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 transition-all duration-300 text-white py-2 px-6 rounded-full shadow-xl text-lg hover:scale-105"
+          className="px-6 py-2 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold hover:from-blue-600 hover:to-cyan-500 transition-all shadow-md"
         >
           Contact Me
         </a>
         <a
           href="#projects"
-          className="bg-gray-900 bg-opacity-50 border border-purple-500 hover:bg-purple-600 hover:text-white transition-all duration-300 text-purple-300 py-2 px-6 rounded-full shadow-lg text-lg hover:scale-105"
+          className="px-6 py-2 rounded-full border border-cyan-400 text-cyan-300 hover:bg-cyan-500 hover:text-white transition-all shadow-sm"
         >
           View Projects
         </a>
-        <a
-          href="#skills"
-          className="bg-gray-900 bg-opacity-50 border border-indigo-500 hover:bg-indigo-600 hover:text-white transition-all duration-300 text-indigo-300 py-2 px-6 rounded-full shadow-lg text-lg hover:scale-105"
-        >
-          My Skills
-        </a>
-      </div>
+      </motion.div>
     </motion.section>
   );
 };

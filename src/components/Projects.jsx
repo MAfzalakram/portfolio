@@ -12,6 +12,11 @@ const projects = [
     title: 'Course Management API',
     description: 'Developed a RESTful API using Django REST Framework with CRUD functionality, OpenAPI docs and model validations.',
     link: 'https://github.com/MAfzalakram/CoursesDRF'
+  },
+  {
+    title: 'React + Tailwind Developer Portfolio',
+    description: 'Built a responsive portfolio with React, Tailwind CSS, and Framer Motion. Showcased profile via modular components, scroll effects, and typewriter hero. Deployed on Vercel with GitHub CI/CD integration.',
+    link: 'https://github.com/MAfzalakram/portfolio'
   }
 ];
 
